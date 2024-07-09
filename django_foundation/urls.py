@@ -16,7 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.urls import include
+
+# 在Django 2.0及更高版本中,url函数已被弃用，使用re_path和path函数代替
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('users/', include('users.urls'))
 ]
