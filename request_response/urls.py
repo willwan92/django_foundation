@@ -9,4 +9,6 @@ urlpatterns = [
     re_path(r'^get_query_params', views.get_query_params),
     re_path(r'^get_form_data', views.get_form_data),
     re_path(r'^get_json', views.get_json),
+    re_path(r'^response_demo', views.response_demo),
+    re_path(r'^json_response', views.json_response),
 ]

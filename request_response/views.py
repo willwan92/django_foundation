@@ -1,4 +1,4 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 import json
 
 
@@ -40,3 +40,22 @@ def get_json(request):
     name = params_dict.get('name')
     age = params_dict.get('age')
     return HttpResponse('get_json: name=%s, age=%d' % (name, age))
+
+
+def response_demo(request):
+    # 设置content_type和status
+    response = HttpResponse(content='响应内容', content_type='text/plain; charset=utf8', status=200)
+    # 自定义响应头
+    response['custom_header'] = 'abcd'
+    return response
+
+
+def json_response(request):
+    data = {
+        'code': 200,
+        'message': '成功'
+    }
+
+    # data = ['列表']
+    # 如果响应数据data不是字典，safe需要设为False
+    return JsonResponse(data, safe=True)
