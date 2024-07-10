@@ -8,4 +8,5 @@ urlpatterns = [
     re_path(r'^weather/(?P<city>\w+)/(?P<date>\d{8})/$', views.weather),
     re_path(r'^get_query_params', views.get_query_params),
     re_path(r'^get_form_data', views.get_form_data),
+    re_path(r'^get_json', views.get_json),
 ]
