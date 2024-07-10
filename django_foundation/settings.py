@@ -23,9 +23,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-54%jtlm01+#@7p_-9w&l+4qzh8o-e2x8h#&)7&2_pai759scfg'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '*'
+]
 
 
 # Application definition
@@ -117,6 +119,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 # 静态路径路由前缀
+# 静态文件资源只有在Debug模式开启时可以访问，
+# 生产环境建议使用nginx等专用的静态资源服务器提供静态资源服务
 STATIC_URL = 'static/'
 # 静态文件目录配置
 STATICFILES_DIRS = [
